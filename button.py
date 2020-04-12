@@ -17,7 +17,7 @@ class Button(pyglet.sprite.Sprite):
             text {str} -- the text to be displayed on the button (default: {"Button"})
             text_size {int} -- the size of the text to be displayed (default: {30})
         """
-        image = pyglet.image.load("button.png")
+        image = pyglet.image.load("resources/button.png")
         image.anchor_x, image.anchor_y = image.width//2, image.height//2
         super().__init__(image, x=x, y=y)
         self.scale = scale
