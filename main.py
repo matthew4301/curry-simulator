@@ -6,12 +6,12 @@ from pyglet import media
 from button import Button
 
 player = media.Player()
-source = media.load('curry_music.wav')
+source = media.load('resources/curry_music.wav')
 player.queue(source)
 
 window = pyglet.window.Window(fullscreen = True);
 
-image = pyglet.resource.image('curry.jpg')
+image = pyglet.resource.image('resources/curry.jpg')
 SCALE_FACTOR = window.height / image.height
 image.anchor_x = image.width // 2
 curry_sprite = Sprite(
