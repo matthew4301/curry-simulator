@@ -1,4 +1,4 @@
-'''objects that ive shoved up my arse'''
+"""objects that ive shoved up my arse"""
 import pyglet
 from pyglet.sprite import Sprite
 from pyglet import media
@@ -6,12 +6,12 @@ from pyglet import media
 from button import Button
 
 player = media.Player()
-source = media.load('resources/curry_music.wav')
+source = media.load("resources/curry_music.wav")
 player.queue(source)
 
-window = pyglet.window.Window(fullscreen = True);
+window = pyglet.window.Window(fullscreen=True)
 
-image = pyglet.resource.image('resources/curry.jpg')
+image = pyglet.resource.image("resources/curry.jpg")
 SCALE_FACTOR = window.height / image.height
 image.anchor_x = image.width // 2
 curry_sprite = Sprite(
@@ -28,17 +28,18 @@ start_button = Button(
     text_size=140
 )
 
-label = pyglet.text.Label(
-    'curry simulator 2020',
-    font_name='Comic Sans MS',
-    font_size=80,
-    x=window.width // 2, y = window.height // 2,
-    anchor_x="center", anchor_y="center"
-)
+label = pyglet.text.Label("curry simulator 2020",
+                          font_name="Comic Sans MS",
+                          font_size=80,
+                          x=window.width // 2, y=window.height // 2,
+                          anchor_x="center", anchor_y="center"
+                          )
+
 
 @window.event
 def on_show():
     player.play()
+
 
 @window.event
 def on_draw():
@@ -47,10 +48,12 @@ def on_draw():
     label.draw()
     start_button.draw()
 
+
 @window.event
 def on_mouse_press(x, y, mb, modifiers):
     if (start_button.inButton(x, y) and
-        mb == pyglet.window.mouse.LEFT):
+            mb == pyglet.window.mouse.LEFT):
         print("Clicked!")
+
 
 pyglet.app.run()
